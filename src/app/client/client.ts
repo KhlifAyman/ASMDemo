@@ -1,4 +1,5 @@
 export interface Client {
+  id:bigint;
     nom_prenom: string;
     code_client:string;
     email: string;

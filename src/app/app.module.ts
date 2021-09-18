@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 
 import { ClientModule } from './client/client.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ClientModule,
     HttpClientModule,
     NgbModule,
+    BrowserAnimationsModule,
+    MatButtonModule
 
   ],
   providers: [],
