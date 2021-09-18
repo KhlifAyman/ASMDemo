@@ -1,0 +1,108 @@
+<div class="container">
+
+    <div class="d-flex justify-content-between">
+      <h4>Modifier client</h4>
+      <a href="#" routerLink="/client/index" class="btn btn-primaryt">Back</a>
+    </div>
+
+    <hr>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="title">Nom et prénom:</label>
+              <input
+                formControlName="nom_prenom"
+                [(ngModel)]="client.nom_prenom"
+                id="nom_prenom"
+                type="text"
+                class="form-control">
+              <div *ngIf="f.nom_prenom.touched && f.nom_prenom.invalid" class="alert alert-danger">
+                  <div *ngIf="f.nom_prenom.errors.required">*Name is required.</div>
+                  <div *ngIf="f.nom_prenom.errors.pattern">*Nom invalide.</div>
+              </div>
+            </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-6 ">
+            <label for="title">Code client:</label>
+            <input
+              formControlName="code_client"
+              [(ngModel)]="client.code_client"
+              id="code_client"
+              type="text"
+              class="form-control">
+            <div *ngIf="f.code_client.touched && f.code_client.invalid" class="alert alert-danger">
+                <div *ngIf="f.code_client.errors.required">*Code client is required.</div>
+                <div *ngIf="f.code_client.errors.pattern">*Code invalide.</div>
+            </div>
+          </div>
+      </div>
+
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="email">Email:</label>
+              <input
+                formControlName="email"
+                [(ngModel)]="client.email"
+                id="email"
+                type="text"
+                class="form-control">
+              <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                  <div *ngIf="f.email.errors.required">*Email is required.</div>
+                  <div *ngIf="f.email.errors.email">*The email must be a valid email address.</div>
+              </div>
+            </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-6 ">
+            <label for="title">Adresse:</label>
+            <input
+              formControlName="adresse"
+              [(ngModel)]="client.adresse"
+              id="Adresse"
+              type="text"
+              class="form-control">
+            <div *ngIf="f.adresse.touched && f.adresse.invalid" class="alert alert-danger">
+                <div *ngIf="f.adresse.errors.required">*Adresse is required.</div>
+                <div *ngIf="f.adresse.errors.email">*l'adresse est invalide.</div>
+            </div>
+          </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-6 ">
+          <label for="title">Code postal:</label>
+          <input
+            formControlName="code_postal"
+            [(ngModel)]="client.code_postal"
+            id="code_postal"
+            type="text"
+            class="form-control">
+          <div *ngIf="f.code_postal.touched && f.code_postal.invalid" class="alert alert-danger">
+              <div *ngIf="f.code_postal.errors.required">*Adresse is required.</div>
+              <div *ngIf="f.code_postal.errors.email">*le code postal est invalide.</div>
+          </div>
+        </div>
+    </div>
+
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="numero_telephone">Numéro de téléphone:</label>
+              <input
+                [(ngModel)]="client.numero_telephone"
+                formControlName="numero_telephone"
+                id="numero_telephone"
+                type="text"
+                class="form-control">
+              <div *ngIf="f.numero_telephone.touched && f.numero_telephone.invalid" class="alert alert-danger">
+                  <div *ngIf="f.numero_telephone.errors.required">*Phone is required.</div>
+                  <div *ngIf="f.numero_telephone.errors.pattern">*Numéro de téléphone invalide.</div>
+              </div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+    </form>
+</div>

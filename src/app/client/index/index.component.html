@@ -1,0 +1,35 @@
+<section>
+
+    <div class="d-flex justify-content-between">
+      <h4>Liste de clients</h4>
+      <a routerLink="/client/create" class="btn btn-success">Ajouter un nouveau client</a>
+    </div>
+
+    <br>
+
+    <table class="table ">
+      <tr>
+        <th>ID</th>
+        <th>Nom et prenom</th>
+        <th>Code client</th>
+        <th>Email</th>
+        <th>Adresse</th>
+        <th>Code postal</th>
+        <th>Numéro de téléphone</th>
+        <th width="220px">Action</th>
+      </tr>
+      <tr *ngFor="let client of clients">
+        <td>{{ client.id }}</td>
+        <td>{{ client.nom_prenom }}</td>
+        <td>{{ client.code_client }}</td>
+        <td>{{ client.email }}</td>
+        <td>{{ client.adresse }}</td>
+        <td>{{ client.code_postal }}</td>
+        <td>{{ client.numero_telephone }}</td>
+        <td>
+          <a href="#" [routerLink]="['/client/', 'edit', client.id  ]" class="btn btn-primary">Modifier</a>
+          <button type="button" (click)="deleteClient(client.id)" class="btn btn-danger">Supprimer</button>
+        </td>
+      </tr>
+    </table>
+ </section>
