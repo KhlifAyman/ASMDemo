@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'client/create', component: CreateComponent },
   { path: 'client/edit/:idClient', component: EditComponent }
 ];
-
+//ggytfytfytf
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
